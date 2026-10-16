@@ -1,8 +1,9 @@
 // Application state and helper functions
 // Note: In production, replace localStorage-based store with API calls and IndexedDB outbox
+import { SCHOOL_NAME } from '../config.js';
 
 // State
-export let mem = { log: [], school: 'โรงเรียนตัวอย่างวิทยา' };
+export let mem = { log: [], school: SCHOOL_NAME };
 export const store = {
   get(k, d) {
     try {
@@ -22,7 +23,7 @@ export const store = {
   }
 };
 export let log = store.get('vb_log', []);
-export let school = store.get('vb_school', 'โรงเรียนตัวอย่างวิทยา');
+export let school = store.get('vb_school', SCHOOL_NAME);
 
 // Timers for clearing timeouts and intervals
 export let timers = [];
