@@ -1,4 +1,5 @@
 import { app, clear } from '../main.js';
+import { home } from './views/home.js';
 import {
   school,
   esc,
@@ -9,8 +10,7 @@ import {
   $,
   timers,
   mem,
-  store,
-  log
+  store, log
 } from '../model.js';
 import { PURPOSES } from '../config.js';
 import { pad } from '../pad.js';
