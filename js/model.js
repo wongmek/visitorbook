@@ -1,6 +1,6 @@
 // Application state and helper functions
 // Note: In production, replace localStorage-based store with API calls and IndexedDB outbox
-import { SCHOOL_NAME } from '../config.js';
+import { SCHOOL_NAME } from './config.js';
 
 // State
 export let mem = { log: [], school: SCHOOL_NAME };
