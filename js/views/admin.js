@@ -13,4 +13,3 @@ export function admin() {
   </div>';
   $('#home').onclick = home;
 }
-}
