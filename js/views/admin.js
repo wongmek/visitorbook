@@ -1,5 +1,6 @@
 import { app, clear } from '../main.js';
 import { toast } from '../model.js';
+import { api } from '../api.js';
 
 /**
  * Render the admin view
@@ -12,4 +13,27 @@ export function admin() {
     <button class="cta" id="home">กลับหน้าแรก</button>
   </div>`;
   $('#home').onclick = home;
+}
+
+/**
+ * Prompt for admin PIN and login
+ */
+export function askPin() {
+  const pin = prompt('กรุณาใส่รหัสผู้ดูแลระบบ:');
+  if (pin === null) { // User cancelled
+    return;
+  }
+
+  api.call('admin_login', { pin })
+    .then(result => {
+      if (result.token) {
+        // PIN is valid, show admin view
+        admin();
+      } else {
+        toast('รหัสผ่านไม่ถูกต้อง');
+      }
+    })
+    .catch(err => {
+      toast('เกิดข้อผิดพลาด: ' + err.message);
+    });
 }
