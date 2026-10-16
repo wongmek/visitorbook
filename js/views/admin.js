@@ -1,6 +1,6 @@
 import { app, clear } from '../main.js';
 import { toast } from '../model.js';
-import { api } from '../api.js';
+import * as api from '../api.js';
 
 /**
  * Render the admin view
