@@ -1,5 +1,5 @@
 import { app, clear } from '../main.js';
-import { home } from './views/home.js';
+import { home } from './home.js';
 import {
   school,
   esc,
