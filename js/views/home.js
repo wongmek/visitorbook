@@ -1,5 +1,5 @@
 import { app, clear } from '../main.js';
-import { school, esc, fmtT, fmtD, toast, timers } from '../model.js';
+import { school, esc, fmtT, fmtD, toast, timers, $ } from '../model.js';
 import { form } from './form.js';
 import { book } from './book.js';
 import { askPin } from './admin.js';
