@@ -1,4 +1,4 @@
-import { CFG } from './config.js';
+import { API_URL, KIOSK_TOKEN } from './config.js';
 
 /**
  * Call the Apps Script backend API
@@ -7,10 +7,10 @@ import { CFG } from './config.js';
  * @returns {Promise<any>} The response data
  */
 export async function call(action, payload = {}) {
-  const res = await fetch(CFG.API_URL, {
+  const res = await fetch(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify({ action, kiosk: CFG.KIOSK_TOKEN, ...payload }),
+    body: JSON.stringify({ action, kiosk: KIOSK_TOKEN, ...payload }),
     redirect: 'follow',
   });
   const j = await res.json();
@@ -23,7 +23,7 @@ export async function call(action, payload = {}) {
  * @returns {Promise<Array>} List of visitor records for public display
  */
 export const book = () =>
-  fetch(CFG.API_URL + '?action=book')
+  fetch(API_URL + '?action=book')
     .then(r => r.json())
     .then(j => j.data);
 
