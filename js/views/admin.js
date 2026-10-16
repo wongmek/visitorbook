@@ -1,6 +1,6 @@
 import { app, clear } from '../main.js';
 import { toast } from '../model.js';
-import * as api from '../api.js';
+import { call } from '../api.js';
 
 /**
  * Render the admin view
@@ -24,7 +24,7 @@ export function askPin() {
     return;
   }
 
-  api.call('admin_login', { pin })
+  call('admin_login', { pin })
     .then(result => {
       if (result.token) {
         // PIN is valid, show admin view
