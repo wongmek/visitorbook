@@ -1,5 +1,5 @@
 import { clear } from './model.js';
-import { home } from './views/home.js';
+import { home } from './home.js';
 
 const app = document.getElementById('app');
 export { app, clear };

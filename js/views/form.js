@@ -24,6 +24,13 @@ import { camStream, photo, snapping, stopCam, startCam, snap } from '../camera.j
  */
 export function form(keep) {
   clear();
+  // Declare form state variables
+  let purpose = '';
+  let pax = 1;
+  let photo = '';
+  let saved = {};
+  let cons = false;
+
   if (!keep) {
     // Reset form state
     purpose = '';
